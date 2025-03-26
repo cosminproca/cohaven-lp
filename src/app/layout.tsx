@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.className} antialiased bg-white dark:bg-gray-900`}>
+      <body className={`${geist.className} antialiased bg-white dark:bg-jet-100`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

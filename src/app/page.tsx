@@ -1,13 +1,15 @@
 import Button from './components/Button';
-import ThemeToggle from './components/ThemeToggle';
 import AppPreview from './components/AppPreview';
+import NewsletterForm from './components/NewsletterForm';
+import Header from './components/Header';
+import HeroButtons from './components/HeroButtons';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
-      <ThemeToggle />
+      <Header />
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-800 dark:to-gray-900">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 pt-16">
         <div className="container mx-auto px-4 py-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center lg:text-left">
@@ -19,10 +21,7 @@ export default function Home() {
                 Swipe right to find your ideal roommate and rent an apartment together. 
                 CoHaven makes group living simple and fun!
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button variant="primary">Download Now</Button>
-                <Button variant="secondary">Learn More</Button>
-              </div>
+              <HeroButtons />
             </div>
             <div className="flex-1 relative">
               <AppPreview />
@@ -31,8 +30,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mission Statement Section */}
+      <section className="py-24 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Our Mission</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              At CoHaven, we&apos;re on a mission to revolutionize how people find their perfect roommate match.
+              We believe in creating meaningful connections that lead to lasting friendships and harmonious living situations.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group">
+              <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-t-3xl"></div>
+                <div className="mb-6">
+                  <div className="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Connect</h3>
+                <p className="text-gray-600 dark:text-gray-300">Building meaningful connections between compatible roommates through our innovative matching platform.</p>
+              </div>
+            </div>
+
+            <div className="group">
+              <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-t-3xl"></div>
+                <div className="mb-6">
+                  <div className="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Simplify</h3>
+                <p className="text-gray-600 dark:text-gray-300">Making the roommate search process effortless with our streamlined platform and intuitive features.</p>
+              </div>
+            </div>
+
+            <div className="group">
+              <div className="relative h-full bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-t-3xl"></div>
+                <div className="mb-6">
+                  <div className="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Trust</h3>
+                <p className="text-gray-600 dark:text-gray-300">Ensuring safe and secure connections through verified profiles and transparent communication.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section id="features" className="py-40 bg-white dark:bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-amber-50/50 dark:from-orange-900/5 dark:to-amber-900/5"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-2xl mx-auto text-center mb-20">
@@ -42,7 +101,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="relative">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-3xl blur-xl dark:from-orange-500/5 dark:to-amber-500/5"></div>
-              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl">
+              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-2 hover:border-orange-500/20 dark:hover:border-orange-400/20">
                 <div className="mb-6 relative">
                   <div className="hover:animate-spin w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center transform -rotate-6">
                     <svg className="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,18 +111,12 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Smart Matching</h3>
                 <p className="text-gray-600 dark:text-gray-300">Our AI-powered algorithm matches you with compatible roommates based on lifestyle, preferences, and budget.</p>
-                <div className="mt-6 flex items-center text-orange-600 dark:text-orange-400">
-                  <span className="font-semibold">Learn more</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
 
             <div className="relative mt-8 md:mt-12">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-3xl blur-xl dark:from-orange-500/5 dark:to-amber-500/5"></div>
-              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl">
+              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-2 hover:border-orange-500/20 dark:hover:border-orange-400/20">
                 <div className="mb-6 relative">
                   <div className="hover:animate-spin w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center transform rotate-6">
                     <svg className="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,18 +126,12 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Quick & Easy</h3>
                 <p className="text-gray-600 dark:text-gray-300">Swipe through potential matches and connect instantly. Find your perfect roommate in minutes, not days.</p>
-                <div className="mt-6 flex items-center text-orange-600 dark:text-orange-400">
-                  <span className="font-semibold">Learn more</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
 
             <div className="relative mt-4">
               <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-3xl blur-xl dark:from-orange-500/5 dark:to-amber-500/5"></div>
-              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl">
+              <div className="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-2 hover:border-orange-500/20 dark:hover:border-orange-400/20">
                 <div className="mb-6 relative">
                   <div className="hover:animate-spin w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center transform -rotate-3">
                     <svg className="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,12 +141,6 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Safe & Secure</h3>
                 <p className="text-gray-600 dark:text-gray-300">Verified profiles and secure messaging ensure you&apos;re connecting with real, trustworthy people.</p>
-                <div className="mt-6 flex items-center text-orange-600 dark:text-orange-400">
-                  <span className="font-semibold">Learn more</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
           </div>
@@ -128,7 +169,7 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-600 dark:text-gray-300">"Found my perfect roommate match in just 2 days! The app made the whole process so much easier than traditional roommate searches."</p>
+              <p className="text-gray-600 dark:text-gray-300">&quot;Found my perfect roommate match in just 2 days! The app made the whole process so much easier than traditional roommate searches.&quot;</p>
             </div>
 
             <div className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-lg">
@@ -148,7 +189,7 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-600 dark:text-gray-300">"The matching algorithm is spot-on! Found someone with similar lifestyle and interests. We're now great friends and perfect roommates."</p>
+              <p className="text-gray-600 dark:text-gray-300">&quot;The matching algorithm is spot-on! Found someone with similar lifestyle and interests. We&apos;re now great friends and perfect roommates.&quot;</p>
             </div>
 
             <div className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-lg">
@@ -168,7 +209,7 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-600 dark:text-gray-300">"CoHaven made finding a roommate so much less stressful. The verification process gave me peace of mind, and the chat feature was super convenient!"</p>
+              <p className="text-gray-600 dark:text-gray-300">&quot;CoHaven made finding a roommate so much less stressful. The verification process gave me peace of mind, and the chat feature was super convenient!&quot;</p>
             </div>
 
             <div className="bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-lg">
@@ -188,7 +229,7 @@ export default function Home() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-600 dark:text-gray-300">"CoHaven made finding a roommate so much less stressful. The verification process gave me peace of mind, and the chat feature was super convenient!"</p>
+              <p className="text-gray-600 dark:text-gray-300">&quot;CoHaven made finding a roommate so much less stressful. The verification process gave me peace of mind, and the chat feature was super convenient!&quot;</p>
             </div>
           </div>
         </div>
@@ -203,16 +244,7 @@ export default function Home() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               Get the latest updates about new features, roommate finding tips, and special offers delivered to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-              <div className="flex-1">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="w-full px-6 py-4 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400"
-                />
-              </div>
-              <Button variant="primary">Subscribe</Button>
-            </div>
+            <NewsletterForm />
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
               We respect your privacy. Unsubscribe at any time.
             </p>
@@ -221,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-600 dark:bg-orange-700 text-white">
+      <section className="py-20 bg-orange-600 dark:bg-gray-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Find Your Perfect Roommate?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -229,8 +261,20 @@ export default function Home() {
             Download the app today and start swiping!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary">Download on App Store</Button>
-            <Button variant="secondary">Get it on Google Play</Button>
+            <Button 
+              variant="primary" 
+              disabled 
+              className="cursor-not-allowed opacity-70"
+            >
+              Coming Soon - App Store
+            </Button>
+            <Button 
+              variant="primary" 
+              disabled 
+              className="cursor-not-allowed opacity-70"
+            >
+              Coming Soon - Google Play
+            </Button>
           </div>
         </div>
       </section>
